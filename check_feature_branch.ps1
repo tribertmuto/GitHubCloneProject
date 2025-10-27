@@ -43,7 +43,7 @@ function Test-IsGitRepository {
 function Test-HasUncommittedChanges {
     try {
         $status = git status --porcelain
-        return $status -ne ""
+        return $status.Trim() -ne ""
     }
     catch {
         return $false
